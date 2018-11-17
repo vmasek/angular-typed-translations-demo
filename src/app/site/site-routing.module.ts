@@ -6,7 +6,11 @@ const siteRoutes: Routes = [
   {
     path: '',
     component: SiteComponent,
-    children: [],
+    children: [
+      {path: 'home', loadChildren: './home/home.module#HomeModule'},
+      {path: 'info', loadChildren: './info/info.module#InfoModule'},
+      {path: '', pathMatch: 'full', redirectTo: 'home'},
+    ],
   },
 ];
 
