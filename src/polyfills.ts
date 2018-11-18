@@ -34,6 +34,9 @@
 // import 'core-js/es6/weak-map';
 // import 'core-js/es6/set';
 
+// stackblitz https://github.com/stackblitz/core/issues/758
+import 'core-js/es7/reflect';
+
 /**
  * If the application will be indexed by Google Search, the following is required.
  * Googlebot uses a renderer based on Chrome 41.

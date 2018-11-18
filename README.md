@@ -1,27 +1,51 @@
-# AngularTypedTranslations
+# Angular typed translations demo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
+This is an example app project for blog post about [Typed translations in Angular](https://medium.com/@vmasek/angular-typed-translations-29353f0a60bc)
 
-## Development server
+It demonstrates usage of lazy loading, dependency injection and TypeScript to achieve internationalised application.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Project structure
 
-## Code scaffolding
+```
+src/app
+├─ app.component.ts
+├─ app.module.ts                   // only what is needed for whole app are imported here
+├─ app-routing.module.ts           // lazy routing of i18n site modules
+├─ i18n
+│  ├── cs.translation.ts           // Czech translation data object
+│  ├── en.translation.ts           // English translation data object
+│  └── utils.ts                    // exports of Translation type and injection token
+└─ site                            // directory containing site views and i18n site wrappers
+   ├─ home
+   │  ├─ home.component.css
+   │  ├─ home.component.html       // translation used in template
+   │  ├─ home.component.ts         // translation injected in constructor
+   │  ├─ home.module.ts
+   │  └─ home-routing.module.ts
+   ├─ info
+   │  ├─ info.component.css
+   │  ├─ info.component.html       // translation used in template
+   │  ├─ info.component.ts         // translation injected in constructor
+   │  ├─ info.module.ts
+   │  └─ info-routing.module.ts
+   ├─ site.component.ts            // component routing site itself
+   ├─ site.cs.module.ts            // module providing Czech i18n requireoments (+ importing site module)
+   ├─ site.en.module.ts            // module providing English i18n requireoments (+ importing site module)
+   ├─ site.module.ts               // shared module imported to specific site modules
+   └─ site-routing.module.ts       // site routing, this routes actual application
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
 
-## Build
+More details about the file purposes and code constructions are in the files itself. 
+Setup guide with motivation and concept explanation is in the [blog post](https://medium.com/@vmasek/angular-typed-translations-29353f0a60bc).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+# How to run
 
-## Running unit tests
+Visit Stackblitz for [online demo](https://stackblitz.com/github/vmasek/angular-typed-translations-demo)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+or
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- Clone the repo
+- Install dependencies `npm i`
+- Run `ng serve` for a dev server
+- Navigate to `http://localhost:4200/`

@@ -4,8 +4,13 @@ import { TRANSLATION } from '../i18n/utils';
 
 import { SiteModule } from './site.module';
 
-/* This module should hold only translate related stuff and import site module */
-
+/**
+ * Should hold only internationalisation related stuff like translations
+ *
+ * Another good examples of what should be here are locales for MomentJS, Timezones
+ *
+ * Site module should be imported here
+ */
 @NgModule({
   imports: [
     SiteModule,

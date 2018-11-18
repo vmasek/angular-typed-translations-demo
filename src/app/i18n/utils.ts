@@ -1,6 +1,9 @@
 import { InjectionToken } from '@angular/core';
 import { en } from './en.translation';
 
+/**
+ * Enum of currently supported languages
+ */
 export enum WebsiteLanguage {
   English = 'en',
   Czech = 'cs',
@@ -12,4 +15,7 @@ export enum WebsiteLanguage {
  */
 export type Translation = typeof en;
 
+/**
+ * Translation token used for dependency injection provider
+ */
 export const TRANSLATION = new InjectionToken<Translation>('TRANSLATION');
